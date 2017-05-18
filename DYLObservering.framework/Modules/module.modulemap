@@ -1,0 +1,6 @@
+framework module DYLObservering {
+  umbrella header "DYLObservering.h"
+
+  export *
+  module * { export * }
+}
