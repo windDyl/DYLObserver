@@ -9,15 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "DYLObserver.h"
 
-
-
-
-
 @interface NSObject (DYLObserving)
-
-
-
-
 
 #pragma mark Observe Properties
 
@@ -53,10 +45,6 @@
 
 /// Calls `-observeProperty:withSelector:` for each key-path.
 - (void)dyl_observeProperties:(NSArray *)keyPaths withSelector:(SEL)observationSelector;
-
-
-
-
 
 
 #pragma mark Observe Foreign Property
@@ -96,10 +84,6 @@
 
 /// Calls `-observeObject:property:withSelector:` for each property.
 - (void)dyl_observeObject:(id)object properties:(NSArray *)keyPaths withSelector:(SEL)selector;
-
-
-
-
 
 #pragma mark Observe Relationships
 
@@ -142,15 +126,7 @@
 /// Calls `-observeRelationship:changeBlock:insertionBlock:removalBlock:replacementBlock:` with only change block.
 - (void)dyl_observeRelationship:(NSString *)keyPath changeBlock:(DYLBlockGeneric)changeBlock;
 
-
-
-
-
 // No foreign relationships yet, but do you really need this kind of stuff?
-
-
-
-
 
 #pragma mark Map Properties
 
@@ -178,15 +154,7 @@
 /// Calls `-map:to:transform:` with transformation block that replaces `nil` value by given object.
 - (void)dyl_map:(NSString *)sourceKeyPath to:(NSString *)destinationKeyPath null:(id)nullReplacement;
 
-
-
-
-
 // No foreign mapping yet, but do you really need this kind of stuff?
-
-
-
-
 
 #pragma mark Notifications
 
@@ -201,12 +169,6 @@
 
 /// Calls `-observeNotification:fromObject:withBlock:` for each combination of name and object. `objects` may be nil, but can not be an empty array, because nothing will be registered.
 - (void)dyl_observeNotifications:(NSArray *)names fromObjects:(NSArray *)objects withBlock:(DYLBlockNotify)block;
-
-
-
-
-
-
 
 #pragma mark Removing
 //! Removing observations is optional. Cleanup is performed automatically when objects deallocate. You may need to remove observation earlier, though.
@@ -223,17 +185,10 @@
 
 @end
 
-
-
-
-
 /// Transformation blocks that can be used for map methods.
 typedef id(^DYLMappingTransformBlock)(id);
 extern DYLMappingTransformBlock const DYLMappingIsNilBlock;         // return @( value == nil );
 extern DYLMappingTransformBlock const DYLMappingIsNotNilBlock;      // return @(  value != nil );
 extern DYLMappingTransformBlock const DYLMappingInvertBooleanBlock; // return @( ! value.boolValue );
 extern DYLMappingTransformBlock const DYLMappingURLFromString;      // return [NSURL URLWithString:value];
-
-
-
 
