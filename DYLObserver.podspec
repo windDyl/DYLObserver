@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "DYLObserver"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "自定义通过block实现KVO,直接导入framework就可以使用"
 
   # This description is used to generate tags and improve search results.
@@ -52,7 +52,7 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "dyliu" => "email@address.com" }
+  s.author             = { "dyliu" => "ldy2260479085@163.com" }
   # Or just: s.author    = "dyliu"
   # s.authors            = { "dyliu" => "email@address.com" }
   # s.social_media_url   = "http://twitter.com/dyliu"
@@ -64,7 +64,7 @@ Pod::Spec.new do |s|
   #
 
   # s.platform     = :ios
-  # s.platform     = :ios, "5.0"
+  s.platform     = :ios, "7.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -79,7 +79,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/windDyl/DYLObserver.git", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/windDyl/DYLObserver.git", :tag => "1.0.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -90,7 +90,8 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "DYLObserver/*.{h,m,framework}"
+#s.source_files  = "DYLObserver/*.{h,m,framework}"
+s.source_files  = "*.{framework}"
 # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
